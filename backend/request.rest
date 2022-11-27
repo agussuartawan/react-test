@@ -1,20 +1,24 @@
 GET http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVXVpZCI6IjJjMmY4ODQ1LTU1MjUtNGI1NC04NTM1LWY1MzA4NjdhMjBlMSIsIm5hbWUiOiJTdXdhciIsImVtYWlsIjoic3V3YXJAZ21haWwuY29tIiwiZ2VuZGVyIjoiUHJpYSIsImlhdCI6MTY2OTU0ODI0NSwiZXhwIjoxNjY5NTQ4MjYwfQ.2ceU8fBfPXyjf9ZjIR7NU54e5QFQZTMrf3v1m9lS40w
 
 ###
-GET http://localhost:5000/users/2
+GET http://localhost:5000/users/697eb4d2-487c-478d-8747-a90bca47a96c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMmMyZjg4NDUtNTUyNS00YjU0LTg1MzUtZjUzMDg2N2EyMGUxIiwibmFtZSI6IlN1d2FyIiwiZW1haWwiOiJzdXdhckBnbWFpbC5jb20iLCJnZW5kZXIiOiJQcmlhIiwiaWF0IjoxNjY5NTQyNDA0LCJleHAiOjE2Njk1NDI0MTl9.98wmHbsBx1LxdUjXy2_F4NFbDAbAxgwJZZzvsn20bvc
 
 ###
 POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-        "name": "Martinus",
-        "email": "kowo@mail.com",
-        "gender": "Pria"
+        "name": "Suwar",
+        "email": "suwar@gmail.com",
+        "gender": "Pria",
+        "password": "password",
+        "confPassword": "password"
 }
 
 ###
-PATCH  http://localhost:5000/users/2
+PATCH  http://localhost:5000/users/3d99cc3d-c81f-4487-83c4-2d12320728c9
 Content-Type: application/json
 
 {
@@ -24,4 +28,20 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:5000/users/1
+DELETE  http://localhost:5000/users/697eb4d2-487c-478d-8747-a90bca47a96c
+
+###
+// Login
+POST http://localhost:5000/api/login
+Content-Type: application/json
+
+{
+        "email": "suwar@gmail.com",
+        "password": "password"
+}
+
+###
+GET http://localhost:5000/api/token
+
+###
+DELETE http://localhost:5000/api/logout
